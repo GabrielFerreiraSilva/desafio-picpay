@@ -19,12 +19,10 @@ public class Transfer {
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
 
-  @Column(nullable = false)
   @ManyToOne
   @JoinColumn(name = "sender_id")
   private Wallet sender;
 
-  @Column(nullable = false)
   @ManyToOne
   @JoinColumn(name = "receiver_id")
   private Wallet receiver;
