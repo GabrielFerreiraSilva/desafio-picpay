@@ -2,6 +2,7 @@ package com.dev.gabriel.desafio_picpay.service;
 
 import com.dev.gabriel.desafio_picpay.client.AuthorizationClient;
 import com.dev.gabriel.desafio_picpay.dto.AuthorizationClientResponse;
+import com.dev.gabriel.desafio_picpay.dto.CreateTransferRequest;
 import com.dev.gabriel.desafio_picpay.exception.PicPayException;
 import com.dev.gabriel.desafio_picpay.model.entity.Transfer;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ import java.util.Objects;
 public class AuthorizationService {
   private final AuthorizationClient authorizationClient;
 
-  public boolean isAuthorized(Transfer transfer) {
+  public boolean isAuthorized(CreateTransferRequest transfer) {
     ResponseEntity<AuthorizationClientResponse> response =
         this.authorizationClient.isAuthorized(transfer);
 
