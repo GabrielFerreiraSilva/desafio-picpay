@@ -2,11 +2,17 @@ package com.dev.gabriel.desafio_picpay.model.entity;
 
 import com.dev.gabriel.desafio_picpay.model.enums.WalletType;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "tb_wallet")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
 public class Wallet {
 
   @Id
