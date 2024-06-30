@@ -1,12 +1,18 @@
 package com.dev.gabriel.desafio_picpay.model.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
 @Table(name = "tb_transfer")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
 public class Transfer {
 
   @Id
