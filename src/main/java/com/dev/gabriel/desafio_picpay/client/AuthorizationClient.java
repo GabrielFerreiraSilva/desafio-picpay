@@ -1,6 +1,7 @@
 package com.dev.gabriel.desafio_picpay.client;
 
 import com.dev.gabriel.desafio_picpay.dto.AuthorizationClientResponse;
+import com.dev.gabriel.desafio_picpay.dto.CreateTransferRequest;
 import com.dev.gabriel.desafio_picpay.model.entity.Transfer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -11,5 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface AuthorizationClient {
 
   @GetMapping
-  ResponseEntity<AuthorizationClientResponse> isAuthorized(@RequestBody Transfer transfer);
+  ResponseEntity<AuthorizationClientResponse> isAuthorized(
+      @RequestBody CreateTransferRequest transfer);
 }
