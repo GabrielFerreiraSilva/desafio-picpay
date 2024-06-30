@@ -37,4 +37,13 @@ public class WalletService {
 
     this.walletRepository.save(wallet);
   }
+
+  @Transactional
+  public void debit(Long id, BigDecimal value) {
+    Wallet wallet = this.walletRepository.findById(id).orElseThrow(WalletNotFoundException::new);
+
+    wallet.setBalance(wallet.getBalance().subtract(value));
+
+    this.walletRepository.save(wallet);
+  }
 }
