@@ -1,5 +1,6 @@
 package com.dev.gabriel.desafio_picpay.model.entity;
 
+import com.dev.gabriel.desafio_picpay.dto.CreateWalletRequest;
 import com.dev.gabriel.desafio_picpay.model.enums.WalletType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -37,4 +38,12 @@ public class Wallet {
   @Column(nullable = false)
   @Enumerated(EnumType.STRING)
   private WalletType walletType;
+
+  public Wallet(CreateWalletRequest request) {
+    this.name = request.name();
+    this.cpfCnpj = request.cpfCnpj();
+    this.email = request.email();
+    this.password = request.password();
+    this.walletType = request.walletType();
+  }
 }
