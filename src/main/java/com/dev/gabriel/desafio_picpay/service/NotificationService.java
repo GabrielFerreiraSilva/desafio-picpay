@@ -1,7 +1,7 @@
 package com.dev.gabriel.desafio_picpay.service;
 
 import com.dev.gabriel.desafio_picpay.client.NotificationClient;
-import com.dev.gabriel.desafio_picpay.model.entity.Transfer;
+import com.dev.gabriel.desafio_picpay.dto.TransferResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ public class NotificationService {
   private final NotificationClient notificationClient;
   private static final Logger logger = LoggerFactory.getLogger(NotificationService.class);
 
-  public void sendNotification(Transfer transfer) {
+  public void sendNotification(TransferResponse transfer) {
     try {
       logger.info("Sending notification...");
       ResponseEntity<Void> response = this.notificationClient.sendNotification(transfer);
